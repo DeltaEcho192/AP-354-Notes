@@ -14,7 +14,6 @@
 	\section{Notes: 02 Aug}
 	\paragraph{Calculate Divergance Theorem}
 		Given the vector field, where $z=0$:
-		\footnote{hello my name is periwinkle and im so cute and hungry}
 		\begin{equation}
 			\underline{v}=3y^{2}z\underline{i} + 2y^{2}\underline{j} + yz^{2}\underline{k}
 		\end{equation}
@@ -60,5 +59,53 @@
 		\end{figure}
 
 
-	\paragraph{Calculate Stokes Integral Theorem} for the velocity field $v=x \un{j}$
+	\paragraph{Calculate Stokes Integral Theorem} for the velocity field $v=x \un{j}$.
+		\\ Stokes integral is given by:
+		\begin{equation}
+			\oint_{\partial S} \un{v}\cdot dr = \iint_S \un{n} \cdot \nabla \times \un{v} \; dS
+		\end{equation}
+		Calculating the LHS:
+		\begin{align}
+			\oint_{\partial S} \un{v}\cdot dr &= \int (x\un{j}) \cdot (dx \cdot \un{i} + dy \cdot \un{j}) \\
+											  &= \int x dy
+		\end{align}
+		The only non zero term is in the vertical because the dot product is 0 for non-equal unit vectors 
+		\footnote{Split integrals if more than one direction in velocity field}
+		\\ Based on Figure: \ref{fg:2} respect the rotations when picking the bounds for the integrals:
+		\begin{align}
+			LHS &= \int_2^3 x dy + \int_3^2 x dy \\
+				&= \int_2^3 4 dy + \int_3^2 2 dy \\
+				&= 2
+		\end{align}
+
+		Calculating the RHS:
+		The normal vector using the right hand rule, based on the rotation is $\un{k}$
+		\begin{align}
+			\iint_S \un{n} \cdot \nabla \times \un{v} \; dS &= \iint \un{k} \cdot \un{k} \; dS \\
+															&= \int_2^3 \int_2^4 dxdy \\
+															&= 2
+		\end{align}
+		The inside cross product between the Del and V:
+		\begin{equation}
+			\nabla \times \un{v} = \un{i} \partFrac{}{x} \times (x \un{j}) = \un{k}
+		\end{equation}
+		The partial cancels the x term and i cross j by convention is k. Only the x partial is included as all the 
+		other partials would be zero. \\
+		Therefor LHS = RHS \\
+		\\
+		Figure \ref{fg:2}, has arrows indicating the force and magnitude of different positions, they indicate that the rotation is
+		anti-clockwise
+		\begin{figure}[ht]
+			\centering
+			\caption{Stokes Integral Figure}
+			\label{fg:2}
+			\begin{tikzpicture}
+			\begin{axis}[xmin=0, xmax=5, ymin=0, ymax=5, axis x line=bottom, axis y line=left]
+				\draw[pattern=north west lines, pattern color=blue] (2,2) rectangle (4,3);
+				\draw [-latex](4,3) -- (4,4);
+				\draw [-latex](3,3) -- (3,3.5);
+				\draw [-latex](2,3) -- (2,3.25);
+			\end{axis}
+			\end{tikzpicture}
+		\end{figure}
 \end{document}
