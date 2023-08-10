@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{patterns}
+\usepackage{blindtext}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\newcommand{\un}[1]{\underline{#1}}
+\newcommand{\partFrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\unI}{\underline{i}}
+\newcommand{\unJ}{\underline{j}}
+\newcommand{\unK}{\underline{k}}
+\pgfplotsset{compat=1.18}
+\title{Applied 354 Lecture Notes}
+\author{Anthony Durrer}
+\date{ }
+
+\begin{document}
+
+\maketitle
+
+\section{Stokes and Divergance Integrals}
+
+\subfile{sections/notes}
+
+\section{Streakline example}
+\subfile{sections/lecture_8}
+\end{document}
+
